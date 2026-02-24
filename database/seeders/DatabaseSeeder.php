@@ -17,19 +17,21 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::create(
-            [
-                'id' => 0,
-                'school_id' => 0,
-                'name' => 'Admin',
-                'class' => '',
-                'major' => '',
-                'username' => 'admin_perpustakaan',
-                'role' => 'admin',
-                'password' => Hash::make('admin123'),
-                'email' => 'perpustakaan@smktelkom-jkt.sch.id',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
+        [
+            'id' => 0,
+            'school_id' => 0,
+            'name' => 'Admin',
+            'class' => '',
+            'major' => '',
+            'username' => 'admin_perpustakaan',
+            'role' => 'admin',
+            'password' => Hash::make('admin123'),
+            'email' => 'perpustakaan@smktelkom-jkt.sch.id',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
         );
+
+        $this->call(CategorySeeder::class);
     }
 }

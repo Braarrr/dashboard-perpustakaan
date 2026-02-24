@@ -7,8 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 class book extends Model
 {
     protected $fillable = [
-        'book_code', 'title', 'author', 'publisher', 'year', 'is_borrowed'
+        'book_code',
+        'title',
+        'author',
+        'publisher',
+        'year',
+        'is_borrowed',
+        'category_id',
+        'cover_image',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function transaction()
     {
